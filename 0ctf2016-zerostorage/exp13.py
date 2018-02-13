@@ -22,7 +22,7 @@ sysmem = 0x21000
 stdout = 0xfbad2887
 
 #p = process(elf)
-p = remote("182.254.230.85", 5678)
+p = remote("172.16.30.131", 5678)
 
 def insert(s):
     p.recvuntil("Your choice: ")
