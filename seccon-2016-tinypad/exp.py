@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from pwn import *
-import struct
 
 context.log_level = "debug"
 
