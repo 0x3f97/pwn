@@ -4,7 +4,7 @@ from pwn import *
 
 context.log_level = "debug"
 
-elf = "./a.out"
+elf = "./stack_overflow32"
 ENV = {"LD_PRELOAD":"./libc.so.6"}
 
 plt_addr = 0x8048380
