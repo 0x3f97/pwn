@@ -1,4 +1,7 @@
-# vote 250(pwn)
+# vote
+
+**Points:** 255
+**Solves:** 61
 
 >hk node: nc 47.90.103.10 6000
 >
