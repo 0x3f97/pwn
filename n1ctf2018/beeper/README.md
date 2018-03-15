@@ -1,6 +1,6 @@
 # beeper
 
-**Points:** 255
-**Solves:** 61
+**Points:** 303
+**Solves:** 47
 
 >[beeper](beeper)
