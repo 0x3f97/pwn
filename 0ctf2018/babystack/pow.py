@@ -15,12 +15,11 @@ def proof_of_work():
 
 
 def exec_serv(name, payload):
-    p = subprocess.Popen(name, stdout=file('/home/gd/pwn/0ctf2018/babystack/233','w'), stderr=subprocess.STDOUT)
-    #p.stdin.write(payload)
+    p = subprocess.Popen(name, stdin=subprocess.PIPE, stdout=file('/dev/null','w'), stderr=subprocess.STDOUT)
+    p.stdin.write(payload)
     p.wait()
 
 if __name__ == '__main__':
-    #proof_of_work()
-    #payload = sys.stdin.read(0x100)
-    payload = ""
+    proof_of_work()
+    payload = sys.stdin.read(0x100)
     exec_serv('./babystack', payload)
