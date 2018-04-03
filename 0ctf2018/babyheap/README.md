@@ -21,4 +21,4 @@ _IO_buf_end = (bin_sh_addr-0x64)/2
 _IO_buf_base = 0
 ```
 
-`_IO_str_overflow` 填在 `0xe0` 偏移处，`system` 地址填在它后面
+`_IO_str_overflow` 填在 `_IO_FILE` 结构体的 `0xd8` 偏移处，`system` 地址填在它后面
