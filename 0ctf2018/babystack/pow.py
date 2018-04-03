@@ -15,7 +15,7 @@ def proof_of_work():
 
 
 def exec_serv(name, payload):
-    p = subprocess.Popen(name, stdin=subprocess.PIPE, stdout=file('/dev/null','w'), stderr=subprocess.STDOUT)
+    p = subprocess.Popen(name, stdin=subprocess.PIPE, stdout=file('/dev/null','w'), stderr=subprocess.STDOU)
     p.stdin.write(payload)
     p.wait()
 
