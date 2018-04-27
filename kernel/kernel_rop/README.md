@@ -1,9 +1,7 @@
 # Linux Kernel ROP demo
 
 This is a vulnerable Linux kernel driver used to demonstrate in-kernel
-privilege escalation ROP (Return Oriented Programming) chain in practice. The
-article URL for Part 1 is available at
-<https://cyseclabs.com/page?n=17012016>.
+privilege escalation ROP (Return Oriented Programming) chain in practice.
 
 The driver module is vulnerable to OOB access and allows arbitrary code
 execution. An arbitrary offset can be passed from user space via the provided
